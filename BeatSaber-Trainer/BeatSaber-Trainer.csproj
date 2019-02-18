@@ -34,22 +34,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>.\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>.\References\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="BeatSaberCustomUI">
-      <HintPath>.\Plugins\BeatSaberCustomUI.dll</HintPath>
+      <HintPath>.\References\Plugins\BeatSaberCustomUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="BS_Utils">
-      <HintPath>Plugins\BS_Utils.dll</HintPath>
+      <HintPath>.\References\Plugins\BS_Utils.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="IllusionInjector">
-      <HintPath>.\Managed\IllusionInjector.dll</HintPath>
+      <HintPath>.\References\Managed\IllusionInjector.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="IllusionPlugin">
-      <HintPath>.\Managed\IllusionPlugin.dll</HintPath>
+      <HintPath>.\References\Managed\IllusionPlugin.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -59,31 +60,31 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="TextMeshPro-1.0.55.2017.1.0b12">
-      <HintPath>.\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll</HintPath>
+      <HintPath>.\References\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>.\Managed\UnityEngine.dll</HintPath>
+      <HintPath>.\References\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>.\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>.\References\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>.\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>.\References\Managed\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>.\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+      <HintPath>.\References\Managed\UnityEngine.UIElementsModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
-      <HintPath>.\Managed\UnityEngine.UIModule.dll</HintPath>
+      <HintPath>.\References\Managed\UnityEngine.UIModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.VRModule">
-      <HintPath>.\Managed\UnityEngine.VRModule.dll</HintPath>
+      <HintPath>.\References\Managed\UnityEngine.VRModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -97,6 +98,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetFileName)" "$(ProjectDir)\Plugins"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetFileName)" "$(ProjectDir)\References\Plugins"</PostBuildEvent>
   </PropertyGroup>
 </Project>

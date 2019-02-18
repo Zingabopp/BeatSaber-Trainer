@@ -259,7 +259,4 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-/TrainingMod/Managed
-/TrainingMod/Plugins
-/BeatSaber-Trainer/Managed
-/BeatSaber-Trainer/Plugins
+/BeatSaber-Trainer/References
