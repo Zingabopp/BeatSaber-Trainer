@@ -3,8 +3,8 @@ set SourcePath=%~1
 set DestPath=%~dp0
 
 if "%SourcePath%" == "" (
-	echo No path found
-	set /p SourcePath="Enter Beat Saber path (No quotes):"
+	echo Enter the full path (without quotes^) to your Beat Saber game folder 
+	set /p SourcePath="Path:"
 )
 
 echo Source target: %SourcePath%
