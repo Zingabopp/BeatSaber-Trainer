@@ -10,4 +10,4 @@ Required dependencies are BeatSaberCustomUI and BS_Utils.
 
 Build Instructions:
 
-In the project folder, create a Directory Junction to your 'Beat Saber_Data\Managed' and 'Plugins' folder.
+In the project folder there is a batch file called CreateJunctions.bat. Either drag your Beat Saber game folder onto the batch file or enter the full path to your Beat Saber folder into the prompt after double-clicking the batch file.
