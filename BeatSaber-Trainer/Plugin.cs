@@ -24,14 +24,34 @@ namespace BeatSaberTrainer
         public const int NjsMaxSize = 100;
         public const int NjsMinSize = -100;
         public const int NjstepSize = 1;
-        public static int NjsOverride = 10;
+        private static float _NjsOverride = 10;
+        public static float NjsOverride
+        {
+            get
+            {
+                return _NjsOverride;
+            }
+            set
+            {
+                _NjsOverride = value;                
+            }
+        }
+        private static float _maxNjs = 10;
+        public static float MaxNJS
+        {
+            get { return _maxNjs; }
+            set { _maxNjs = value; }
+        }
         public static bool enableNjsOverride = false;
+        public static bool njsAsMin = true;
+        public static bool dynamicNJS = true;
         public static NJSController _njsController;
         private static GameScenesManager _scenesManager;
         public void OnApplicationStart()
         {
 
-            Util.LEMsgLevel = MSGLEVEL.ERROR;
+            
+            Util.LEMsgLevel = MSGLEVEL.DEBUG;
             //Checks if a IPlugin with the name in quotes exists, in case you want to verify a plugin exists before trying to reference it, or change how you do things based on if a plugin is present
             hasBSUtils = IllusionInjector.PluginManager.Plugins.Any(x => x.Name == "Beat Saber Utils");
 
@@ -104,7 +124,7 @@ namespace BeatSaberTrainer
             if (scene.name == "Menu")
             {
                 DebugMessage("CreatingUI");
-                UI.BasicUI.CreateUI();
+                UI.TrainerUI.CreateUI();
                 DebugMessage("UI Created");
             }
 
@@ -141,7 +161,9 @@ namespace BeatSaberTrainer
                 {
                     NjsOverride -= NjstepSize;
                     DebugMessage($"Decreasing jump speed to: {NjsOverride}");
-                    _njsController.AdjustNJS();
+                    UI.TrainerUI.DecrementNJS();
+                    if (_njsController != null)
+                        _njsController.AdjustNJS();
                 }
             }
 
@@ -151,8 +173,10 @@ namespace BeatSaberTrainer
                 if (enableNjsOverride && (NjsOverride < NjsMaxSize))
                 {
                     NjsOverride += NjstepSize;
+                    UI.TrainerUI.IncrementNJS();
                     DebugMessage($"Increasing jump speed to: {NjsOverride}");
-                    _njsController.AdjustNJS();
+                    if(_njsController != null)
+                        _njsController.AdjustNJS();
                 }
             }
 
